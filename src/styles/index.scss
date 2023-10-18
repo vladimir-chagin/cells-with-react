@@ -1,0 +1,70 @@
+.grid {
+  $border-color: black;
+  $border: 1px solid $border-color;
+
+  $cell-font-size: 14px;
+
+  border: $border;
+
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+
+    border-top: none;
+    border-bottom: $border;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    .cell {
+      padding: 4px;
+      margin: 0;
+      max-width: 200px;
+      width: 200px;
+      border-right: $border;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; 
+      align-items: center;
+
+      &:last-of-type {
+        border-right: none;
+      }
+
+      .loading-spinner {
+        font-size: $cell-font-size;
+        padding: 0;
+        margin: 0;
+        border: 1px solid transparent;
+      }
+
+      input {
+        font-size: $cell-font-size;
+        border: none;
+        outline: none;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        flex: 1;
+
+        &:hover {
+          cursor: default;
+        }
+      }
+
+      button {
+        margin: 0;
+        padding: 0;
+        height: 16px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+    }
+    
+  }
+}
